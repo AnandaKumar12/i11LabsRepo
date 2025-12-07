@@ -19,7 +19,7 @@ export default function DriverEntryPage() {
     navigate('/drivers')
   }
 const handleSearchByMobile = (mobile: string) => {
-  if (!mobile.trim()) return alert("Please enter a mobile number") // ✅ mandatory for search
+  if (!mobile.trim()) return alert("Please enter a mobile number") 
   const found = drivers.find(d => d.mobile === mobile)
   if (!found) return alert("No driver found with that mobile number")
   setSelectedDriver(found)
@@ -32,8 +32,7 @@ const handleSearchByMobile = (mobile: string) => {
         initial={editing}
         onSave={handleSave}
         onCancel={() => navigate('/drivers')}
-        // Only pass search prop when you want search (e.g., editing/search page)
-        onSearchMobile={params.id ? handleSearchByMobile : undefined}
+       
       />
     </div>
   )
