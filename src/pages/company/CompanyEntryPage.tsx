@@ -19,12 +19,6 @@ export default function CompanyEntryPage() {
     navigate('/companies')
   }
 
-  // const handleSearchByMobile = (mobile: string) => {
-  //   const found = companies.find(c => c.primaryMobile === mobile)
-  //   if (!found) return alert("No company found with that mobile number")
-  //   setSelectedCompany(found)
-  // }
-
   return (
     <div>
       <h2 className="text-xl font-semibold mb-4">
