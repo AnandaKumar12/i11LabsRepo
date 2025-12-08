@@ -20,7 +20,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
   const change = (k: keyof Company, v: any) => {
     setForm(s => ({ ...s, [k]: v }))
 
-    // Clear error immediately when user types
     setErrors(prev => ({ ...prev, [k]: '' }))
   }
 
@@ -97,7 +96,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
     <form onSubmit={submit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        {/* Company Name */}
         <div>
           <InputField
             label="Company Name *"
@@ -107,7 +105,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
         </div>
 
-        {/* Established On */}
         <div>
           <InputField
             label="Established On"
@@ -117,7 +114,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           />
         </div>
 
-        {/* Registration Number */}
         <div>
           <InputField
             label="Registration Number *"
@@ -129,7 +125,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           )}
         </div>
 
-        {/* Primary First Name */}
         <div>
           <InputField
             label="Primary Contact First Name"
@@ -144,7 +139,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           {errors.primaryFirstName && <p className="text-red-600 text-sm mt-1">{errors.primaryFirstName}</p>}
         </div>
 
-        {/* Primary Last Name */}
         <div>
           <InputField
             label="Primary Contact Last Name"
@@ -159,7 +153,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           {errors.primaryLastName && <p className="text-red-600 text-sm mt-1">{errors.primaryLastName}</p>}
         </div>
 
-        {/* Website */}
         <div>
           <InputField
             label="Website"
@@ -169,7 +162,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           {errors.website && <p className="text-red-600 text-sm mt-1">{errors.website}</p>}
         </div>
 
-        {/* Address 1 */}
         <div>
           <InputField
             label="Address 1"
@@ -178,7 +170,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           />
         </div>
 
-        {/* Address 2 */}
         <div>
           <InputField
             label="Address 2"
@@ -187,7 +178,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           />
         </div>
 
-        {/* City */}
         <div>
           <InputField
             label="City"
@@ -196,7 +186,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           />
         </div>
 
-        {/* State */}
         <div>
           <InputField
             label="State"
@@ -205,7 +194,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           />
         </div>
 
-        {/* Zip Code */}
         <div>
           <InputField
             label="Zip Code"
@@ -218,7 +206,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           {errors.zip && <p className="text-red-600 text-sm mt-1">{errors.zip}</p>}
         </div>
 
-        {/* Primary Email */}
         <div>
           <InputField
             label="Primary Contact Email"
@@ -229,7 +216,6 @@ export default function CompanyForm({ initial, onSave, onCancel }: Props) {
           {errors.primaryEmail && <p className="text-red-600 text-sm mt-1">{errors.primaryEmail}</p>}
         </div>
 
-        {/* Primary Mobile */}
         <div>
           <InputField
             label="Primary Contact Mobile"

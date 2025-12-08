@@ -18,7 +18,6 @@ const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
 const cityStateRegex = /^[A-Za-z\s]+$/
 const zipRegex = /^[0-9]{5,6}$/
 
-
 export default function DriverForm({ initial, onSave, onCancel }: Props) {
   const [form, setForm] = useState<Partial<Driver>>(initial || {})
 
@@ -43,7 +42,7 @@ export default function DriverForm({ initial, onSave, onCancel }: Props) {
     e?.preventDefault()
     let hasError = false
 
-  
+
     if (!form.firstName?.trim()) {
       setFirstNameError("First Name is required")
       hasError = true
@@ -51,14 +50,6 @@ export default function DriverForm({ initial, onSave, onCancel }: Props) {
       setFirstNameError("Enter valid First Name (letters only, min 2)")
       hasError = true
     } else setFirstNameError("")
-
-    // if (!form.lastName?.trim()) {
-    //   setLastNameError("Last Name is required")
-    //   hasError = true
-    // } else if (!nameRegex.test(form.lastName.trim())) {
-    //   setLastNameError("Enter valid Last Name (letters only, min 2)")
-    //   hasError = true
-    // } else setLastNameError("")
 
     if (!form.mobile?.trim()) {
       setMobileError("Mobile Number is required")
@@ -168,7 +159,7 @@ export default function DriverForm({ initial, onSave, onCancel }: Props) {
           {emailError && <p className="text-red-600 text-sm">{emailError}</p>}
         </div>
 
-         <div>
+        <div>
           <InputField label="Mobile *" value={form.mobile}
             onChange={(v) => { change('mobile', v); setMobileError(""); }} />
           {mobileError && <p className="text-red-600 text-sm">{mobileError}</p>}

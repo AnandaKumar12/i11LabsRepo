@@ -8,7 +8,7 @@ import DriverTable from '../../components/tables/DriverTable'
 function usePagination<T>(items: T[], pageSize: number) {
   const [page, setPage] = useState(1)
   const total = Math.max(1, Math.ceil(items.length / pageSize))
-  const paged = items.slice((page-1)*pageSize, page*pageSize)
+  const paged = items.slice((page - 1) * pageSize, page * pageSize)
   return { page, setPage, total, paged }
 }
 
@@ -58,6 +58,21 @@ export default function DriverListPage() {
           Search
         </button>
       </div>
+
+      {searchTriggered && (
+        <button
+          type="button"
+          onClick={() => {
+            setQuery("")
+            setSearchTriggered(false)
+            setPage(1)
+          }}
+          className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500 transition mb-4"
+        >
+          Cancel
+        </button>
+      )}
+
 
       {searchTriggered && (
         <p className="mb-2 text-sm text-gray-600">

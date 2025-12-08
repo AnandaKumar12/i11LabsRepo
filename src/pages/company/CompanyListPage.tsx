@@ -19,8 +19,8 @@ export default function CompanyListPage() {
   const companies = getCompanies()
 
   const filtered = useMemo(() => {
-    if (!searchTriggered) return [] 
-    if (!query.trim()) return companies 
+    if (!searchTriggered) return []
+    if (!query.trim()) return companies
 
     const q = query.toLowerCase()
     return companies.filter(
@@ -42,7 +42,7 @@ export default function CompanyListPage() {
 
   const handleQueryChange = (value: string) => {
     setQuery(value)
-    if (!value.trim()) setSearchTriggered(false) 
+    if (!value.trim()) setSearchTriggered(false)
   }
 
   return (
@@ -64,6 +64,20 @@ export default function CompanyListPage() {
             Search
           </button>
         </div>
+        {searchTriggered && (
+          <button
+            onClick={() => {
+              setQuery("");
+              setSearchTriggered(false);
+              setPage(1);
+            }}
+            className="mb-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition"
+          >
+            Cancel
+          </button>
+        )}
+
+
 
         {searchTriggered && (
           <p className="mb-2 text-sm text-gray-600">
